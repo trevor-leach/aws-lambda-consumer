@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"declarationDir": "dist/types",
+		"outDir": "dist/",
+		"target": "ES6",
+		"esModuleInterop": true,
+		"alwaysStrict": true
+	},
+	"include": ["index.ts"]
+}

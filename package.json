@@ -1,0 +1,30 @@
+{
+	"name": "aws-lambda-consumer",
+	"version": "1.0.0-alpha",
+	"description": "",
+	"author": {
+		"name": "Trevor Leach",
+		"email": "r33fshark-github@yahoo.com",
+		"url": "https://github.com/trevor-leach"
+	},
+	"types": "dist/types/index.d.ts",
+	"files": [
+		"dist/types/index.d.ts"
+	],
+	"scripts": {
+		"clean": "rm -rf ./dist",
+		"build": "npx tsc",
+		"test": "npx tsd"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"@types/aws-lambda": "^8.10.56"
+	},
+	"devDependencies": {
+		"tsd": "^0.13.1",
+		"typescript": "^3.9.6"
+	},
+	"tsd": {
+		"directory": "test"
+	}
+}
