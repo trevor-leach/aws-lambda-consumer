@@ -1,7 +1,15 @@
 {
 	"name": "aws-lambda-consumer",
-	"version": "1.0.0-alpha",
-	"description": "",
+	"version": "1.0.0",
+	"description": "Typescript types that transform the handler function types from @types/aws-lambda into the stricter synchronous and asynchronous signatures that are intended to be implemented",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/trevor-leach/aws-lambda-consumer.git"
+	},
+	"keywords": ["typescript", "aws-lambda", "aws", "lambda", "types"],
 	"author": {
 		"name": "Trevor Leach",
 		"email": "r33fshark-github@yahoo.com",
@@ -13,8 +21,8 @@
 	],
 	"scripts": {
 		"clean": "rm -rf ./dist",
-		"build": "npx tsc",
-		"test": "npx tsd"
+		"build": "tsc",
+		"test": "tsd"
 	},
 	"license": "ISC",
 	"dependencies": {

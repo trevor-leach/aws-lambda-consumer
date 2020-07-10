@@ -16,7 +16,7 @@ export type Handler<TEvent = any, TResult = any> = (
 This is technically correct, but as users of the library, it doesn't represent the functions we are supposed to write:
 
 * If we use the callback approach, we should never return a Promise, and
-* If we do want to write our handler as an async method then
+* If we write an async handler, then
     * The callback parameter shouldn't even exist and
 	* The return type should only be a Promise, and not void | Promise
 
@@ -31,17 +31,20 @@ Writing tests is now difficult.  We get the following types of errors:
 // main.test.ts
 it.('should work', async (done) => {
 
-	let actual: MyResult = await myHandler(myEvent, myContext); // Expected 3 arguments, but got 2.
-	// ^^^ Type 'MyResult | void' is not assignable to type 'MyResult'.
+	let actual: MyResult = await myHandler(myEvent, myContext);
+	// 1. Expected 3 arguments, but got 2.
+	// 2. Type 'MyResult | void' is not assignable to type 'MyResult'.
 });
 ```
+
+----
 
 ## The Solution
 
 This module exports 2 utility types, `SyncHandler` and `AsyncHandler`, that transform the handlers from [@types/aws-lambda](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-lambda) into the types that are intended to be implemented. It also reexports everything from [@types/aws-lambda](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-lambda) for convenience.
 
-### Examples
-```Typescript
+### Example
+```typescript
 import {AsyncHandler, SyncHandler, APIGatewayProxyHandler} from "aws-lambda-consumer"
 
 // (event: APIGatewayProxyEvent, context: Context, callback: Callback<APIGatewayProxyResult>) => void
