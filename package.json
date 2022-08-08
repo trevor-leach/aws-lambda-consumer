@@ -1,6 +1,6 @@
 {
 	"name": "aws-lambda-consumer",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Typescript types that transform the handler function types from @types/aws-lambda into the stricter synchronous and asynchronous signatures that are intended to be implemented",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
@@ -25,12 +25,12 @@
 		"test": "tsd"
 	},
 	"license": "ISC",
-	"dependencies": {
-		"@types/aws-lambda": "^8.10.56"
+	"peerDependencies": {
+		"@types/aws-lambda": "^8.10"
 	},
 	"devDependencies": {
-		"tsd": "^0.13.1",
-		"typescript": "^3.9.6"
+		"tsd": "^0.22",
+		"typescript": "^4.7.4"
 	},
 	"tsd": {
 		"directory": "test"

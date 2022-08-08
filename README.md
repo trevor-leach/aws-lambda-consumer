@@ -1,4 +1,4 @@
-# aws-lambda-config
+# aws-lambda-consumer
 
 Utility types that convert the handler functions found in [@types/aws-lambda](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-lambda) into the asynchronous and synchronous signatures that are intended to be implemented.
 
