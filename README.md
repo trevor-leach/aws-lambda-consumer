@@ -41,11 +41,12 @@ it.('should work', async (done) => {
 
 ## The Solution
 
-This module exports 2 utility types, `SyncHandler` and `AsyncHandler`, that transform the handlers from [@types/aws-lambda](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-lambda) into the types that are intended to be implemented. It also reexports everything from [@types/aws-lambda](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-lambda) for convenience.
+This module exports 2 utility types, - `SyncHandler` and `AsyncHandler` - that transform the handlers from [@types/aws-lambda](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-lambda) into the types that are intended to be implemented.
 
 ### Example
 ```typescript
-import {AsyncHandler, SyncHandler, APIGatewayProxyHandler} from "aws-lambda-consumer"
+import { AsyncHandler, SyncHandler } from "aws-lambda-consumer"
+import { APIGatewayProxyHandler } from "aws-lambda"
 
 // (event: APIGatewayProxyEvent, context: Context, callback: Callback<APIGatewayProxyResult>) => void
 type SyncAPIGatewayProxyHandler  = SyncHandler<APIGatewayProxyHandler>
